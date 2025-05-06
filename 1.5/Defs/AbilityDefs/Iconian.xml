@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <!--Mental Abilities-->
+  <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <defName>VPE_RerollAdultBackgroundCivillian</defName>
+    <label>blood focus</label>
+    <description>By forcibly manipulating the body’s stores of hemogen, the caster can enter a state of rapid meditation, regaining psyfocus at the cost of hemogen.</description>
+    <iconPath>Abilities/Hemosage/BloodFocus</iconPath>
+    <abilityClass>IconianPsycasts.Ability_RerollBackgroundTrait</abilityClass>
+    <range>12.9</range>
+    <targetingParameters>
+      <canTargetHumans>true</canTargetHumans>
+      <canTargetAnimals>false</canTargetAnimals>
+      <canTargetMechs>false</canTargetMechs>
+      <canTargetMutants>false</canTargetMutants>
+    </targetingParameters>
+    <targetMode>Humanlike</targetMode>
+    <castFleck>PsycastAreaEffect</castFleck>
+    <castTime>1</castTime>
+    <cooldownTime>1</cooldownTime><!--1800000-->
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>VPE_Iconian</path>
+        <level>1</level>
+        <order>1</order>
+        <psyfocusCost>0.02</psyfocusCost>
+        <entropyGain>0</entropyGain>
+      </li>
+      <li Class="IconianPsycasts.RerollExtension">
+        <traits>
+          <common>
+            <li>
+              <degree>0</degree>
+              <def>Gourmand</def>
+            </li>
+          </common>
+          <rare>
+            <li>
+              <degree>0</degree>
+
+              <def>QuickSleeper</def>
+            </li>
+          </rare>
+          <epic>
+            <li>
+              <degree>0</degree>
+
+              <def>TorturedArtist</def>
+            </li>
+          </epic>
+          <legendary>
+            <li>
+              <degree>0</degree>
+
+              <def>Tough</def>
+            </li>
+          </legendary>
+        </traits>
+        <backgrounds>
+          <common>
+            <li>Hermit82</li>
+            <li>MedievalFarmOaf58</li>
+          </common>
+          <rare>
+            <li>PsychiatricPatient94</li>
+          </rare>
+          <epic>
+            <li>FactoryWorker58</li>
+          </epic>
+          <legendary>
+            <li>MedievalLord57</li>
+          </legendary>
+        </backgrounds>
+      </li>
+    </modExtensions>
+  </VFECore.Abilities.AbilityDef>
+</Defs>
