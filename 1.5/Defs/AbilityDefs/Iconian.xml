@@ -2,9 +2,9 @@
 <Defs>
   <!--Mental Abilities-->
   <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-    <defName>VPE_RerollAdultBackgroundCivillian</defName>
-    <label>blood focus</label>
-    <description>By forcibly manipulating the body’s stores of hemogen, the caster can enter a state of rapid meditation, regaining psyfocus at the cost of hemogen.</description>
+    <defName>Iconian_RerollAdultBackgroundCivillian</defName>
+    <label>Reroll Civillian</label>
+    <description>Placeholder description</description>
     <iconPath>Abilities/Hemosage/BloodFocus</iconPath>
     <abilityClass>IconianPsycasts.Ability_RerollBackgroundTrait</abilityClass>
     <range>12.9</range>
@@ -71,6 +71,107 @@
             <li>MedievalLord57</li>
           </legendary>
         </backgrounds>
+      </li>
+    </modExtensions>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <defName>Iconian_RerollAdultBackgroundMilitary</defName>
+    <label>reroll military</label>
+    <description>Placeholder description</description>
+    <iconPath>Abilities/Hemosage/BloodFocus</iconPath>
+    <abilityClass>IconianPsycasts.Ability_RerollBackgroundTrait</abilityClass>
+    <range>12.9</range>
+    <targetingParameters>
+      <canTargetHumans>true</canTargetHumans>
+      <canTargetAnimals>false</canTargetAnimals>
+      <canTargetMechs>false</canTargetMechs>
+      <canTargetMutants>false</canTargetMutants>
+    </targetingParameters>
+    <targetMode>Humanlike</targetMode>
+    <castFleck>PsycastAreaEffect</castFleck>
+    <castTime>1</castTime>
+    <cooldownTime>1</cooldownTime>
+    <!--1800000-->
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>VPE_Iconian</path>
+        <level>2</level>
+        <order>1</order>
+        <psyfocusCost>0.02</psyfocusCost>
+        <entropyGain>0</entropyGain>
+      </li>
+      <li Class="IconianPsycasts.RerollExtension">
+        <traits>
+          <common>
+            <li>
+              <degree>0</degree>
+              <def>Gourmand</def>
+            </li>
+          </common>
+          <rare>
+            <li>
+              <degree>0</degree>
+
+              <def>QuickSleeper</def>
+            </li>
+          </rare>
+          <epic>
+            <li>
+              <degree>0</degree>
+
+              <def>TorturedArtist</def>
+            </li>
+          </epic>
+          <legendary>
+            <li>
+              <degree>0</degree>
+
+              <def>Tough</def>
+            </li>
+          </legendary>
+        </traits>
+        <backgrounds>
+          <common>
+            <li>Hermit82</li>
+            <li>MedievalFarmOaf58</li>
+          </common>
+          <rare>
+            <li>PsychiatricPatient94</li>
+          </rare>
+          <epic>
+            <li>FactoryWorker58</li>
+          </epic>
+          <legendary>
+            <li>MedievalLord57</li>
+          </legendary>
+        </backgrounds>
+      </li>
+    </modExtensions>
+  </VFECore.Abilities.AbilityDef>
+
+<!--Combat-->
+  <VFECore.Abilities.AbilityDef>
+    <defName>Iconian_AmbushPortal</defName>
+    <label>Ambush portal</label>
+    <description>Use the gate network to move behind the target pawn stunning it if targeting enemy and get a melee attack speed boost.</description>
+    <abilityClass>IconianPsycasts.Ability_AmbushPortal</abilityClass>
+    <iconPath>UI/Abilities/AmbushPortal</iconPath>
+    <castTime>60</castTime>
+    <cooldownTime>5000</cooldownTime>
+    <needsTicking>true</needsTicking>
+    <showUndrafted>true</showUndrafted>
+    <range>45</range>
+    <targetingParameters>
+      <canTargetLocations>false</canTargetLocations>
+      <canTargetPawns>true</canTargetPawns>
+    </targetingParameters>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>VPE_Iconian</path>
+        <level>1</level>
+        <order>2</order>
+        <psyfocusCost>0.02</psyfocusCost>
+        <entropyGain>0</entropyGain>
       </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>
