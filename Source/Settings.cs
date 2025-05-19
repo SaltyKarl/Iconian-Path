@@ -15,6 +15,10 @@ namespace IconianPsycasts
         public float ChanceEpic = 0.17f;
         public float ChanceLegendary = 0.9f;
 
+        public float MovementSpeedBoostDurationSecondsCap = 60f;
+        private string _MovementSpeedBoostDurationSecondsCap;
+        public float AttackSpeedBoostDurationSecondsCap = 60f;
+        private string _AttackSpeedBoostDurationSecondsCap;
         public override void ExposeData()
         {
 
@@ -22,6 +26,8 @@ namespace IconianPsycasts
             Scribe_Values.Look(ref ChanceRare, "ChanceRare", defaultValue: 0.25f);
             Scribe_Values.Look(ref ChanceEpic, "ChanceEpic", defaultValue: 0.17f);
             Scribe_Values.Look(ref ChanceLegendary, "ChanceLegendary", defaultValue: 0.9f);
+            Scribe_Values.Look(ref MovementSpeedBoostDurationSecondsCap, "MovementSpeedBoostDurationSecondsCap", defaultValue: 60f);
+            Scribe_Values.Look(ref AttackSpeedBoostDurationSecondsCap, "AttackSpeedBoostDurationSecondsCap", defaultValue: 60f);
             base.ExposeData();
         }
 
@@ -40,7 +46,11 @@ namespace IconianPsycasts
 
             listing_Standard.Label("SettingsBaseChanceLegendary".Translate() + ": " + (ChanceLegendary * 100f).ToString() + "%");
             Helper.AdjustWeights(ref ChanceCommon, ref ChanceRare, ref ChanceEpic, ref ChanceLegendary, "Legendary", (float)Math.Round((double)listing_Standard.Slider(ChanceLegendary, 0f, 1f), 2));
-            
+
+            listing_Standard.TextFieldNumericLabeled("SettingMovementSpeedBoostDurationSecondsCap".Translate(), ref MovementSpeedBoostDurationSecondsCap, ref _MovementSpeedBoostDurationSecondsCap, 1, 3000);
+            listing_Standard.TextFieldNumericLabeled("SettingAttackSpeedBoostDurationSecondsCap".Translate(), ref AttackSpeedBoostDurationSecondsCap, ref _AttackSpeedBoostDurationSecondsCap, 1, 3000);
+
+
             listing_Standard.End();
         }
     }

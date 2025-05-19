@@ -10,6 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IconianPsycasts</RootNamespace>
     <AssemblyName>IconianPsycasts</AssemblyName>
+    <LangVersion>13.0</LangVersion>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -73,11 +74,17 @@
   </ItemGroup>
   <ItemGroup>
     <Publicize Include="Assembly-CSharp:Verse.PawnGenerator.GenerateSkills" />
+    <Publicize Include="Assembly-CSharp:Verse.SubEffecter_Sprayer.mote" />
+    <Publicize Include="VFECore:VFECore.Abilities.Ability.maintainedEffecters" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ability_AmbushPortal.cs" />
     <Compile Include="Ability_RerollBackgroundTrait.cs" />
+    <Compile Include="DefOfs.cs" />
+    <Compile Include="Hediff_SpeedBost.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Mod.cs" />
+    <Compile Include="PortalExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RerollExtension.cs" />
     <Compile Include="Settings.cs" />

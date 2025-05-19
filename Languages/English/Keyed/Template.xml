@@ -9,4 +9,6 @@
   <ErrorCouldNotGetTraitToRemove>Could not get trait to remove</ErrorCouldNotGetTraitToRemove>
   <ErrorUnableToSelectBackstory>Unable to select backstory</ErrorUnableToSelectBackstory>
   <ErrorUnableToSelectTrait>Unable to select new trait</ErrorUnableToSelectTrait>
+  <SettingMovementSpeedBoostDurationSecondsCap>Movement Speed Bonus Duration Cap (in seconds)</SettingMovementSpeedBoostDurationSecondsCap>
+  <SettingAttackSpeedBoostDurationSecondsCap>Attack Speed Bonus Duration Cap (in seconds)</SettingAttackSpeedBoostDurationSecondsCap>
 </LanguageData>

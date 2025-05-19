@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
 using VFECore;
+using static UnityEngine.GraphicsBuffer;
 
 namespace IconianPsycasts
 {
@@ -276,5 +278,37 @@ namespace IconianPsycasts
             return  DefDatabase<TraitDef>.GetNamed(trait.def);
         }
 
+        public static IntVec3 GetCellToAmbushTeleport(Ability_AmbushPortal ability, GlobalTargetInfo target)
+        {
+            if (!target.HasThing)
+            {
+                return target.Cell;
+            }
+
+            IntVec3 pos = target.Cell + target.Thing.Rotation.Opposite.FacingCell;
+            return pos.WalkableBy(ability.pawn.Map, ability.pawn) ? pos : target.Cell;
+        }
+
+        public static void ApplySpeedHediff(Pawn pawn, float psychicSensitivity)
+        {
+            Hediff hediff = HediffMaker.MakeHediff(DefOfs.Iconian_MovementSpeedBoost, pawn);
+            HediffComp_Disappears comp = hediff.TryGetComp<HediffComp_Disappears>();
+            comp.SetDuration((int)Mathf.Min(comp.disappearsAfterTicks * psychicSensitivity, IconianPsycasts_Mod.settings.MovementSpeedBoostDurationSecondsCap * 60));
+            hediff.Severity *= psychicSensitivity;
+            pawn.health.AddHediff(hediff);
+        }
+        public static void ApplyAttackSpeedHediff(Pawn pawn, float psychicSensitivity)
+        {
+            Hediff hediff = HediffMaker.MakeHediff(DefOfs.Iconian_AttackSpeedBoost, pawn);
+            HediffComp_Disappears comp = hediff.TryGetComp<HediffComp_Disappears>();
+            comp.SetDuration((int)Mathf.Min(comp.disappearsAfterTicks * psychicSensitivity, IconianPsycasts_Mod.settings.MovementSpeedBoostDurationSecondsCap * 60));
+            hediff.Severity *= psychicSensitivity;
+            pawn.health.AddHediff(hediff);
+        }
+        public static void ApplyStun(Pawn pawn, float psychicSensitivity)
+        {
+
+            pawn.stances?.stunner.StunFor((int)(180 * psychicSensitivity), pawn);
+        }
     }
 }

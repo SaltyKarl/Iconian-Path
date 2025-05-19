@@ -5,7 +5,7 @@
     <defName>Iconian_RerollAdultBackgroundCivillian</defName>
     <label>Reroll Civillian</label>
     <description>Placeholder description</description>
-    <iconPath>Abilities/Hemosage/BloodFocus</iconPath>
+    <iconPath>Abilities/Iconian/RerollMilitary</iconPath>
     <abilityClass>IconianPsycasts.Ability_RerollBackgroundTrait</abilityClass>
     <range>12.9</range>
     <targetingParameters>
@@ -78,7 +78,7 @@
     <defName>Iconian_RerollAdultBackgroundMilitary</defName>
     <label>reroll military</label>
     <description>Placeholder description</description>
-    <iconPath>Abilities/Hemosage/BloodFocus</iconPath>
+    <iconPath>Abilities/Iconian/RerollMilitary</iconPath>
     <abilityClass>IconianPsycasts.Ability_RerollBackgroundTrait</abilityClass>
     <range>12.9</range>
     <targetingParameters>
@@ -99,6 +99,9 @@
         <order>1</order>
         <psyfocusCost>0.02</psyfocusCost>
         <entropyGain>0</entropyGain>
+        <prerequisites>
+          <li>Iconian_RerollAdultBackgroundCivillian</li>
+        </prerequisites>
       </li>
       <li Class="IconianPsycasts.RerollExtension">
         <traits>
@@ -155,12 +158,15 @@
     <label>Ambush portal</label>
     <description>Use the gate network to move behind the target pawn stunning it if targeting enemy and get a melee attack speed boost.</description>
     <abilityClass>IconianPsycasts.Ability_AmbushPortal</abilityClass>
-    <iconPath>UI/Abilities/AmbushPortal</iconPath>
+    <iconPath>Abilities/Iconian/AmbushPortal</iconPath>
     <castTime>60</castTime>
     <cooldownTime>5000</cooldownTime>
     <needsTicking>true</needsTicking>
     <showUndrafted>true</showUndrafted>
     <range>45</range>
+    <rangeStatFactors>
+      <PsychicSensitivity>1</PsychicSensitivity>
+    </rangeStatFactors>
     <targetingParameters>
       <canTargetLocations>false</canTargetLocations>
       <canTargetPawns>true</canTargetPawns>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <HediffDef>
+    <defName>Iconian_MovementSpeedBoost</defName>
+    <label>movement speed boost</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>placeholder.</description>
+    <isBad>false</isBad>
+    <minSeverity>0.1</minSeverity>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>1.5</MoveSpeed>
+        </statFactors>
+        <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+
+        <disappearsAfterTicks>300</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+  <HediffDef>
+    <defName>Iconian_AttackSpeedBoost</defName>
+    <label>attack speed boost</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>placeholder.</description>
+    <isBad>false</isBad>
+    <minSeverity>0.1</minSeverity>
+    <stages>
+      <li>
+        <statFactors>
+          <MeleeCooldownFactor>0.75</MeleeCooldownFactor>
+        </statFactors>
+        <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+
+        <disappearsAfterTicks>300</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>
