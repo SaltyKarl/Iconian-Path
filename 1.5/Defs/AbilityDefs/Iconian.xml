@@ -181,4 +181,67 @@
       </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>
+  
+  <VFECore.Abilities.AbilityDef>
+    <defName>Iconian_Minefield</defName>
+    <label>mine field</label>
+    <description>Placeholder</description>
+    <iconPath>Abilities/Iconian/AmbushPortal</iconPath>
+    <abilityClass>IconianPsycasts.Ability_Minefield</abilityClass>
+    <castTime>300</castTime>
+    <durationTime>2700</durationTime>
+    <durationTimeStatFactors>
+      <PsychicSensitivity>1.3</PsychicSensitivity>
+    </durationTimeStatFactors>
+    <range>45.9</range>
+    <radius>15.9</radius>
+    <radiusStatFactors>
+      <PsychicSensitivity>1.3</PsychicSensitivity>
+    </radiusStatFactors>
+    <targetMode>Location</targetMode>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>VPE_Iconian</path>
+        <level>2</level>
+        <order>2</order>
+        <psyfocusCost>0.8</psyfocusCost>
+        <entropyGain>120</entropyGain>
+        <prerequisites>
+          <li>Iconian_AmbushPortal</li>
+        </prerequisites>
+      </li>
+    </modExtensions>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef>
+    <defName>Iconian_SummonMine</defName>
+    <label>Summon Mine</label>
+    <description>Placeholder</description>
+    <iconPath>Abilities/Iconian/DeployAntiprotonMines</iconPath>
+    <abilityClass>IconianPsycasts.Ability_SummonThing</abilityClass>
+    <needsTicking>true</needsTicking>
+    <castTime>150</castTime>
+    <range>45.9</range>
+    <targetMode>Location</targetMode>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>VPE_Iconian</path>
+        <level>3</level>
+        <order>2</order>
+        <psyfocusCost>0.1</psyfocusCost>
+        <entropyGain>25</entropyGain>
+        <prerequisites>
+          <li>Iconian_Minefield</li>
+        </prerequisites>
+      </li>
+      <li Class="IconianPsycasts.SummonExtension">
+        <allowedBuildings>
+          <li MayRequire="kentington.saveourship2">ShipHullTileWrecked</li>
+          <li MayRequire="kentington.saveourship2">ShipHullTile</li>
+          <li MayRequire="kentington.saveourship2">ShipHullTileMech</li>
+          <li MayRequire="kentington.saveourship2">ShipHullTileArchotech</li>
+        </allowedBuildings>
+        <thingDef>Iconian_TurretMine</thingDef>
+      </li>
+    </modExtensions>
+  </VFECore.Abilities.AbilityDef>
 </Defs>

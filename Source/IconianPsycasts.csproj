@@ -11,11 +11,12 @@
     <RootNamespace>IconianPsycasts</RootNamespace>
     <AssemblyName>IconianPsycasts</AssemblyName>
     <LangVersion>13.0</LangVersion>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,6 +68,10 @@
       <HintPath>..\..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="VanillaPsycastsExpanded">
+      <HintPath>..\..\..\..\..\workshop\content\294100\2842502659\1.5\Assemblies\VanillaPsycastsExpanded.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="VFECore">
       <HintPath>..\..\..\..\..\workshop\content\294100\2023507013\1.5\Assemblies\VFECore.dll</HintPath>
       <Private>False</Private>
@@ -79,10 +84,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ability_AmbushPortal.cs" />
+    <Compile Include="Ability_Minefield.cs" />
     <Compile Include="Ability_RerollBackgroundTrait.cs" />
+    <Compile Include="Ability_SummonThing.cs" />
+    <Compile Include="Building_TurretGunSummoned.cs" />
+    <Compile Include="CompBreakLinkBuilding.cs" />
+    <Compile Include="CompProperties_BreakLinkBuilding.cs" />
+    <Compile Include="SummonExtension.cs" />
     <Compile Include="DefOfs.cs" />
-    <Compile Include="Hediff_SpeedBost.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="Iconian_Minefield.cs" />
+    <Compile Include="JobGiver_FollowEnemy.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="PortalExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

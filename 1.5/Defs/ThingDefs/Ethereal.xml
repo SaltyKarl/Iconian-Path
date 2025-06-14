@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>Iconian_Minefield</defName>
+    <label>minefield</label>
+    <thingClass>IconianPsycasts.Iconian_Minefield</thingClass>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <drawOffscreen>true</drawOffscreen>
+    <seeThroughFog>true</seeThroughFog>
+    <alwaysFlee>false</alwaysFlee>
+  </ThingDef>
+ 
+</Defs>
