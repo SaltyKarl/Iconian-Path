@@ -12,7 +12,7 @@ namespace IconianPsycasts
     {
         public bool IsActive => base.Spawned;
 
-        public int MinHeat => 15;
+        public virtual int MinHeat => 15;
 
     }
 }
